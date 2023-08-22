@@ -48,7 +48,6 @@ def leerUsuarios(request):
     contexto = {'Usuarios':usuarios}
     return render(request, 'leer_usuarios.html', contexto)
 
- 
 
 def eliminarUsuarios(request, usuario_nombre):
     usuario = Usuario_nuevo.objects.get(nombre=usuario_nombre)
