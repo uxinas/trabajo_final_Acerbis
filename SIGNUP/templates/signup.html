@@ -1,0 +1,31 @@
+{% extends 'padre.html' %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<title>Signup</title>
+</head>
+<body>
+    <center><h3><p style="color:black"> REGISTRO DE USUARIOS NUEVOS</p></h3>
+    {% if miFormulario.errors %}
+    <p style="color:red;">Estan mal los datos, revisar</p>
+    {% endif %}
+
+    <form action=""method="POST">{% csrf_token %}
+        <!--aca van los elementos de django-->
+
+        <table>
+            {{ miFormulario.as_table }}
+        </table>
+
+        <input type="submit" value="Enviar">
+    </form></center>
+    
+    {% if miFormulario.errors %}
+    <p style="color: red;">Estan mal los datos , revisar.</p>
+    {% endif %}
+</body>
+</html>
+
+{% endblock %}

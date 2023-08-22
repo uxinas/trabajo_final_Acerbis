@@ -1,0 +1,32 @@
+{% extends 'padre.html' %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<title> LISTA DE USUARIOS INT</title>
+
+</head>
+<center>
+<body>
+    {% for u in Users %}
+
+    {{u}}
+
+    <li>
+
+       
+        <button>
+            <a href="{% url 'leer_usuarios_int'  %}">VER USUARIO</a>
+            <a href="{% url 'EliminarUsuarios_int' u.id %}">ELIMINAR USUARIO</a>
+            <a href="{% url 'Editarusuarios_int'  u  %}">EDITAR USUARIO</a>
+        </button>
+    </li>
+        
+    {% endfor %}
+    
+    <a class="btn btn-primary" href="{% url 'Register' %}">Agregar Usuario</a>
+</body>
+</center>
+
+{% endblock %}

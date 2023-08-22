@@ -1,0 +1,33 @@
+{% extends 'padre.html' %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+<head>
+
+<title> LISTA DE USUARIOS</title>
+
+</head>
+
+<body>
+    {% for u in Users %}
+
+         <li>{{u}}</li>
+
+        <button>
+            <a href="{% url 'eliminarUsuarios' u.nombre  %}">ELIMINAR USUARIO</a>
+            <a href="{% url 'editarUsuarios' u.nombre  %}">EDITAR USUARIO</a>
+        </button>
+        <br><br>
+
+
+    {% endfor %} 
+    <br>
+    <button>
+    <a href="{% url 'usuario_nuevo' %}">AGREGAR USUARIO</a>
+    </button>      
+
+</body>
+
+
+{% endblock %}
